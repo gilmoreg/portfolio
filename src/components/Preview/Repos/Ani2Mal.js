@@ -19,8 +19,8 @@ const Ani2Mal = props => (
         <li>Using <strong>Bling.js</strong> instead of <strong>JQuery</strong></li>
       </ul>
     </section>
-    <p>I also added the <strong>Bulma</strong> CSS Framework and was rather pleased with its ease of use. Finally, always wanting to broaden my horizons, I opted to host this via a <strong>Docker</strong> image on <strong>Now.sh</strong> which I had not previously used.</p>
-    <p>Unfortunately as of now given the limitations of the Myanimelist API's search capabilities, a significant number of shows are not matched correctly, making the application almost unusable. That API is no longer being actively developed. However, I reached out to the Anilist API's developer and was promised that a future update will expose additional data which will virtually eliminate this problem. I intend to launch a beta test as soon as that happens.</p>
+    <p>I also added the <strong>Bulma</strong> CSS Framework and was rather pleased with its ease of use.</p>
+    <p>Unfortunately as of now given the limitations of the Myanimelist API's search capabilities, a significant number of shows are not matched correctly, making the application almost unusable. However, the Anilist API's admin promised me that a future update to their API will expose additional data which will virtually eliminate this problem. I intend to launch a beta test as soon as that happens.</p>
     <Buttons close={props.close} repo={'ani2mal'} />
   </section>
 );
