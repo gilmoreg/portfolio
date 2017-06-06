@@ -12,11 +12,9 @@ const Card = (props) => {
   let image = '';
   switch (props.repo) {
     case 'pick': image = 'http://res.cloudinary.com/dk85nueap/image/upload/v1496771557/pick_montage_qrws3r.png'; break;
-    case 'anikunchan': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494283259/Screen_Shot_2017-05-08_at_5.35.46_PM_ujgsri.png'; break;
     case 'condictor': image = 'http://res.cloudinary.com/dk85nueap/image/upload/v1494649577/condictor_1_ytegvq.jpg'; break;
     case 'referendus': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494639165/Screen_Shot_2017-05-12_at_8.32.11_PM_gkjp6c.png'; break;
     case 'steam-battle': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494638837/Screen_Shot_2017-05-12_at_8.26.35_PM_bbfk1a.png'; break;
-    case 'ani2mal': image = 'https://cloud.githubusercontent.com/assets/18176333/26568165/cb7a831a-44c6-11e7-8ee6-2f4e3b7e0e21.png'; break;
     default: image = '';
   }
 
@@ -30,7 +28,17 @@ const Card = (props) => {
       <ul className="topics-list">
         {topics || ''}
       </ul>
-      <button data-repo={props.repo} onClick={props.click}>Project Details</button>
+      <section className="button-row">
+        <button data-repo={props.repo} onClick={props.click}>
+          Project Details
+        </button>
+        <button>
+          <i className="fa fa-external-link" aria-hidden="true" /> Live Site
+        </button>
+        <button>
+          <i className="fa fa-github" aria-hidden="true" /> See the Code
+        </button>
+      </section>
     </section>
   );
 };
