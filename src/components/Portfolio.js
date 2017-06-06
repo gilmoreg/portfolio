@@ -31,7 +31,7 @@ class Portfolio extends Component {
   }
 
   componentWillMount() {
-    const repoNames = ['condictor', 'steam-battle', 'referendus', 'anikunchan', 'ani2mal'];
+    const repoNames = ['pick', 'condictor', 'steam-battle', 'referendus', 'anikunchan', 'ani2mal'];
     const repos = repoNames.map(repo => fetchGithubRepo(repo));
     Promise.all(repos)
     .then((res) => {
@@ -86,6 +86,7 @@ class Portfolio extends Component {
           {children[2]}
           {children[3]}
           {children[4]}
+          {children[5]}
         </section>
       </section>
     );

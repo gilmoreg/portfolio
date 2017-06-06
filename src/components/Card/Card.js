@@ -11,6 +11,7 @@ const Card = (props) => {
 
   let image = '';
   switch (props.repo) {
+    case 'pick': image = 'http://res.cloudinary.com/dk85nueap/image/upload/v1496771557/pick_montage_qrws3r.png'; break;
     case 'anikunchan': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494283259/Screen_Shot_2017-05-08_at_5.35.46_PM_ujgsri.png'; break;
     case 'condictor': image = 'http://res.cloudinary.com/dk85nueap/image/upload/v1494649577/condictor_1_ytegvq.jpg'; break;
     case 'referendus': image = 'http://res.cloudinary.com/dk85nueap/image/upload/c_scale,h_200/v1494639165/Screen_Shot_2017-05-12_at_8.32.11_PM_gkjp6c.png'; break;
