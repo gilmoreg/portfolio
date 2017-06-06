@@ -31,7 +31,7 @@ class Portfolio extends Component {
   }
 
   componentWillMount() {
-    const repoNames = ['pick', 'condictor', 'steam-battle', 'referendus'];
+    const repoNames = ['condictor', 'steam-battle', 'referendus', 'pick'];
     const repos = repoNames.map(repo => fetchGithubRepo(repo));
     Promise.all(repos)
     .then((res) => {
