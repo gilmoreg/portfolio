@@ -29,15 +29,15 @@ const Card = (props) => {
         {topics || ''}
       </ul>
       <section className="button-row">
-        <button data-repo={props.repo} onClick={props.click}>
-          Project Details
-        </button>
-        <button>
+        <a data-repo={props.repo} onClick={props.click}>
+          <span>Project Details</span>
+        </a>
+        <a href={`http://${props.repo}.gilmoreg.com`} rel="noopener noreferrer" target="_blank">
           <i className="fa fa-external-link" aria-hidden="true" /> Live Site
-        </button>
-        <button>
+        </a>
+        <a href={`https://github.com/gilmoreg/${props.repo}`} rel="noopener noreferrer" target="_blank">
           <i className="fa fa-github" aria-hidden="true" /> See the Code
-        </button>
+        </a>
       </section>
     </section>
   );
