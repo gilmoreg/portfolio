@@ -17,7 +17,9 @@ class Copy extends Component {
 
   render() {
     const { copy } = this.props;
-    return React.cloneElement(copy, { more: this.state.more, toggleMore: this.toggleMore });
+    const more = this.state.more;
+    const toggleMore = this.toggleMore;
+    return React.cloneElement(copy, { more, toggleMore });
   }
 }
 

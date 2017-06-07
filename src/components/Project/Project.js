@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Copy from '../Copy/Copy';
+import Condictor from '../Repos/Condictor';
 import './Project.css';
 
 const Project = (props) => {
@@ -37,7 +38,7 @@ Project.propTypes = {
     name: PropTypes.string,
     topics: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
-    copy: PropTypes.element,
+    copy: PropTypes.element.isRequired,
     screenshot: PropTypes.string,
   }),
 };
@@ -47,7 +48,7 @@ Project.defaultProps = {
     name: '',
     topics: [''],
     description: '',
-    copy: React.createElement('p'),
+    copy: <Copy copy={<Condictor />} />,
     screenshot: '',
   },
 };
