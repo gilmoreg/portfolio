@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Preview from './Preview/Preview';
-import Card from './Card/Card';
+import Condictor from './Repos/Condictor';
+import Pick from './Repos/Pick';
+import Referendus from './Repos/Referendus';
+import SteamBattle from './Repos/SteamBattle';
+import Project from './Project/Project';
 import './Portfolio.css';
 
 require('smoothscroll-polyfill').polyfill();
@@ -23,19 +26,45 @@ class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      repos: [],
-      selected: -1,
+      repos: {},
     };
-    this.selectCard = this.selectCard.bind(this);
-    this.closePreview = this.closePreview.bind(this);
   }
 
   componentWillMount() {
     const repoNames = ['condictor', 'steam-battle', 'referendus', 'pick'];
-    const repos = repoNames.map(repo => fetchGithubRepo(repo));
-    Promise.all(repos)
+    const getRepos = repoNames.map(repo => fetchGithubRepo(repo));
+    Promise.all(getRepos)
     .then((res) => {
-      this.setState({ repos: res });
+      const repos = {};
+      res.forEach((r) => {
+        const repo = r;
+        switch (repo.name) {
+          case 'condictor': {
+            repo.screenshot = 'https://cloud.githubusercontent.com/assets/18176333/26330669/b2e90af6-3f12-11e7-96a3-b5349ef61d8f.png';
+            repo.copy = <Condictor />;
+            break;
+          }
+          case 'steam-battle': {
+            repo.screenshot = 'https://cloud.githubusercontent.com/assets/18176333/24309924/c9490b84-109b-11e7-8f7a-4d2e4ee1b365.png';
+            repo.copy = <SteamBattle />;
+            break;
+          }
+          case 'referendus': {
+            repo.screenshot = 'https://cloud.githubusercontent.com/assets/18176333/22914304/5e6e4e3e-f235-11e6-8c51-b1622ae48f38.png';
+            repo.copy = <Referendus />;
+            break;
+          }
+          case 'pick': {
+            repo.screenshot = 'http://res.cloudinary.com/dk85nueap/image/upload/v1496772162/pick-large-montage_jxvg6l.png';
+            repo.copy = <Pick />;
+            break;
+          }
+          default: repo.copy = <p />;
+        }
+        repos[repo.name] = repo;
+      });
+      console.log(repos);
+      this.setState({ repos });
     });
   }
 
@@ -43,49 +72,13 @@ class Portfolio extends Component {
     document.querySelector('body').classList.add('body-fade-in');
   }
 
-  selectCard(e) {
-    e.preventDefault();
-    const repo = e.target.dataset.repo;
-    const index = this.state.repos.findIndex(r => (r.name === repo));
-    if (index >= 0) {
-      if (index === this.state.selected) this.setState({ selected: -1 });
-      else {
-        this.setState({ selected: index });
-        document.querySelector('#preview-container').scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
-
-  closePreview() {
-    this.setState({ selected: -1 });
-    document.querySelector('.Portfolio').scrollIntoView({ behavior: 'smooth' });
-  }
-
   render() {
-    const children = this.state.repos.map(repo =>
-      <Card
-        key={repo.name}
-        repo={repo.name}
-        topics={repo ? repo.topics : []}
-        description={repo ? repo.description : []}
-        click={this.selectCard}
-      />,
-    );
-
-    let preview = null;
-    if ((this.state.selected >= 0) && this.state.repos.length) {
-      preview = <Preview repo={this.state.repos[this.state.selected]} close={this.closePreview} />;
-    }
-
     return (
       <section className="Portfolio">
-        <section className="cards">
-          {children[0]}
-          {children[1]}
-          <div id="preview-container">{(this.state.selected >= 0) ? preview : ''}</div>
-          {children[2]}
-          {children[3]}
-        </section>
+        <Project repo={this.state.repos.condictor} />
+        <Project repo={this.state.repos['steam-battle']} />
+        <Project repo={this.state.repos.referendus} />
+        <Project repo={this.state.repos.pick} />
       </section>
     );
   }

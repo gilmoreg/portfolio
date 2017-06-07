@@ -1,0 +1,70 @@
+.Project {
+  max-width: 640px;
+  margin: 20px auto;
+}
+
+.Project img {
+  width: 100%;
+}
+
+.Project .title {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+
+.Project .title::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  left: 0;
+  bottom: -15px;
+  background-color: #626E73;
+}
+
+.Project .content p {
+  padding-left: 0px;
+}
+
+.Project .description {
+  font-size: 16px;
+  margin: 26px 18px 0px 0px;
+}
+
+.Project ul {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+  padding: 0;
+  color: #babfc1;
+}
+
+.Project li {
+  font-size: 9px;
+  display: inline-block;
+  margin-right: 5px;
+  padding: 3px;
+}
+
+.Project .button-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Project .button-row a {
+  cursor: pointer;
+  margin-top: 20px;
+  flex-basis: auto;
+  flex-grow: 0;
+  border: none;
+  background-color: #5F6E74;
+  font-size: 10px;
+  padding: 8px;
+  color: #F1F2F2;
+  text-decoration: none;
+}
+
+.Project .button-row a span {
+  cursor: pointer;
+}
