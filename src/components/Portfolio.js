@@ -63,7 +63,6 @@ class Portfolio extends Component {
         }
         repos[repo.name] = repo;
       });
-      console.log(repos);
       this.setState({ repos });
     });
   }

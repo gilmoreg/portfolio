@@ -1,6 +1,8 @@
 .Project {
-  max-width: 640px;
+  max-width: 820px;
   margin: 20px auto;
+  padding: 20px;
+  outline: 1px solid rgba(167, 172, 174, 0.5);
 }
 
 .Project img {
