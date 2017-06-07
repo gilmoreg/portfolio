@@ -75,17 +75,13 @@
 }
 
 .Project .readmore {
-  position: relative;
   font-size: 12px;
   width: 100%;
   text-align: center;
+  height: 2em;
 }
 
 .Project .readmore button {
-  position: absolute;
-  top: -25px;
-  left: 40%;
-  right: 40%;
   cursor: pointer;
   border: none;
   background-color: white;

@@ -37,7 +37,7 @@ Project.propTypes = {
     name: PropTypes.string,
     topics: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string,
-    copy: PropTypes.Component,
+    copy: PropTypes.element,
     screenshot: PropTypes.string,
   }),
 };

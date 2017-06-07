@@ -21,12 +21,8 @@ class Copy extends Component {
   }
 }
 
-Copy.defaultProps = {
-  copy: React.createElement('p'),
-};
-
 Copy.propTypes = {
-  copy: PropTypes.Component,
+  copy: PropTypes.element.isRequired,
 };
 
 export default Copy;
