@@ -17,7 +17,7 @@ const Project = (props) => {
         <h2 className="title">{name.toUpperCase()}</h2>
         <div className="description">{description}</div>
         <ul className="topics">{topicList || ''}</ul>
-        { /* {copy} */ }
+        {copy}
         <section className="button-row">
           <a href={`http://${name}.gilmoreg.com`} rel="noopener noreferrer" target="_blank" title={name}>
             <i className="fa fa-external-link" aria-hidden="true" /> Live Site
