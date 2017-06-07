@@ -33,6 +33,7 @@
 
 .Project .content p {
   padding-left: 0px;
+  position: relative;
 }
 
 .Project .description {
@@ -73,6 +74,19 @@
   text-decoration: none;
 }
 
-.Project .button-row a span {
+.Project .readmore {
+  position: relative;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+.Project .readmore button {
+  position: absolute;
+  top: -25px;
+  left: 40%;
+  right: 40%;
   cursor: pointer;
+  border: none;
+  background-color: white;
 }

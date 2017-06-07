@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Copy from '../Copy/Copy';
 import './Project.css';
 
 const Project = (props) => {
@@ -17,7 +18,7 @@ const Project = (props) => {
         <h2 className="title">{name.toUpperCase()}</h2>
         <div className="description">{description}</div>
         <ul className="topics">{topicList || ''}</ul>
-        {copy}
+        <Copy copy={copy} />
         <section className="button-row">
           <a href={`http://${name}.gilmoreg.com`} rel="noopener noreferrer" target="_blank" title={name}>
             <i className="fa fa-external-link" aria-hidden="true" /> Live Site
@@ -29,7 +30,7 @@ const Project = (props) => {
       </section>
     </section>
   );
-}
+};
 
 Project.propTypes = {
   repo: PropTypes.shape({
@@ -46,7 +47,7 @@ Project.defaultProps = {
     name: '',
     topics: [''],
     description: '',
-    copy: <p />,
+    copy: React.createElement('p'),
     screenshot: '',
   },
 };
