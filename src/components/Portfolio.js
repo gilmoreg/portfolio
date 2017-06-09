@@ -55,7 +55,7 @@ class Portfolio extends Component {
             break;
           }
           case 'pick': {
-            repo.screenshot = 'http://res.cloudinary.com/dk85nueap/image/upload/v1496772162/pick-large-montage_jxvg6l.png';
+            repo.screenshot = 'https://res.cloudinary.com/dk85nueap/image/upload/v1496772162/pick-large-montage_jxvg6l.png';
             repo.copy = <Pick />;
             break;
           }
