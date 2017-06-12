@@ -4,12 +4,6 @@
   "homepage": "https://gilmoreg.github.io/portfolio",
   "private": true,
   "dependencies": {
-    "prop-types": "^15.5.8",
-    "re-base": "^2.7.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-markdown": "^2.5.0",
-    "react-marked": "^0.3.1",
     "smoothscroll-polyfill": "^0.3.5"
   },
   "devDependencies": {
@@ -18,14 +12,9 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "gh-pages": "^0.12.0",
-    "react-scripts": "0.9.5"
+    "gh-pages": "^0.12.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "deploy": "gh-pages -d build"
   }
 }
