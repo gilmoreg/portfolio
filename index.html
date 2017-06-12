@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css" />
+    <title>Grayson Gilmore - Portfolio</title>
+  </head>
+  <body>
+    <nav>
+      <img src="https://res.cloudinary.com/dk85nueap/image/upload/v1494642367/avatar_g1a9xb.jpg" width="64" height="64" alt="Grayson Gilmore">
+      <div class="name">
+        <h1>GRAYSON GILMORE</h1>
+        <h4>Fullstack Web Developer</h4>
+      </div>
+      <ul class="links">
+        <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/gilmoreg"><i class="fa fa-github" aria-hidden="true" title="github"></i></a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/graysongilmore/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="assets/grayson_gilmore_resume.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true" title="resume"></i></a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="mailto:gilmoreg@live.com"><i class="fa fa-envelope" aria-hidden="true" title="email me!"></i></a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="onecolumn greeting">
+        <h1>SALUTATIONS!</h1>
+        <p>I'm Grayson Gilmore! I've been on a winding journey, from network operations technician to university professor, but I am finally coming home to my first love: writing software. 
+          I learned fullstack web development and built this portfolio in less than six months while working full time as a professor.
+          I love nothing more than the pains and joys of learning new frameworks, languages, and techniques.</p>
+        <p>I'm excited to join a team where I can contribute and continue to grow as a developer!</p>
+      </section>
+      <!-- PROJECTS -->
+      <section class="onecolumn" id="projects">
+        <h1 style="margin-left: 0">PROJECTS</h1>
+        <section class="portfolio">
+          <section class="project" id="condictor">
+            <a href="http://condictor.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Condictor">
+              <img src="https://cloud.githubusercontent.com/assets/18176333/26330669/b2e90af6-3f12-11e7-96a3-b5349ef61d8f.png" alt="Condictor" />
+            </a>
+            <section class="content">
+              <h2 class="title">CONDICTOR</h2>
+              <div class="description" id="condictor-description"></div>
+              <ul class="topics" id="condictor-topics"></ul>
+              <section id="condictor-copy">
+                <p class="fade">As this was my final project as a <strong>Thinkful</strong> student, I really wanted to shoot for the moon on this one. I challenged myself to pick up several frameworks and libraries outside the curriculum and broaden my knowledge as much as possible.</p>
+                <p class="hidden">I decided early that I would try out <strong>GraphQL</strong> and that turned out to be an amazing adventure of highs and lows! The server side implementation was unexpectedly easy; the challenges really came on the client side. I was drawn to <strong>Apollo Client</strong> and I tried hard to make it work, but ultimately decided that this project wasn’t a good fit. I learned a ton about <strong>Redux</strong> trying to make it play along with Apollo, and I experienced some of the pains of dealing with emerging technology (at one point discovering the source of a problem in a change that wasn’t documented outside of the changelog). In the end it made more sense for me to use <strong>Lokka</strong> in my Redux actions, but I was grateful for the experience.</p>
+                <p class="hidden">I also had quite the journey troubleshooting a <strong>Passport</strong> problem (which turned out to be, as it so often is, a simple mistake in what looked like solid code). It was at this point that I learned about using <strong>Chrome DevTools</strong> to debug <strong>Node</strong>. I was stepping through the <strong>Express</strong> and <strong>Passport</strong> source line by line trying to discover the problem. I got to see how Express middleware layers work in practice - quite an educational experience!</p>
+                <p class="hidden">To push myself even further, I deployed this project using <strong>Docker</strong>, and not only that, but building and deploying the Docker image through <strong>Travis CI</strong>. Getting that to work was so satisfying!</p>
+                <div class="readmore"><button id="condictor-readmore">Read more...</button></div>
+              </section>
+              <section class="button-row">
+                <a href="http://condictor.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Condictor">
+                  <i class="fa fa-external-link" aria-hidden="true" /> Live Site
+                </a>
+                <a href="https://github.com/gilmoreg/condictor" rel="noopener noreferrer" target="_blank" title="Condictor on Github">
+                  <i class="fa fa-github" aria-hidden="true" /> See the Code
+                </a>
+              </section>
+            </section>
+          </section>
+          <section class="project" id="steam-battle">
+            <a href="http://steam-battle.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Steam Battle">
+              <img src="https://cloud.githubusercontent.com/assets/18176333/24309924/c9490b84-109b-11e7-8f7a-4d2e4ee1b365.png" alt="Steam Battle" />
+            </a>
+            <section class="content">
+              <h2 class="title">STEAM BATTLE</h2>
+              <div class="description" id="steam-battle-description"></div>
+              <ul class="topics" id="steam-battle-topics"></ul>
+              <section id="steam-battle-copy">
+                <p class="fade">My first <strong>React/Redux</strong> project. I never expected React to be so much fun!</p>
+                <p class="hidden">The major challenge on this project was struggling with the <strong>Steam API</strong>. It is a poor quality API: it is highly fragmented, outdated, and inadequately documented. It has multiple endpoints using different formats with no consistent return pattern. Although I think this project was successful in the end, I had to scrap many plans to make the scoring more complex and interesting due to limitations of the API.</p>
+                <p class="hidden">Since the Steam API does not support <strong>CORS</strong>, I had to create a backend proxy. Since I love to write APIs so much, I was grateful for the chance to do so. Originally I built a Node/Express server to handle the job, but later took this as an opportunity to learn <strong>Google Cloud Functions</strong> and converted my endpoints over.</p>
+                <p class="hidden">On the front end, dealing with the Steam APIs rate limit meant that I had to throttle my network calls. I used <strong>lodash</strong> <strong>debounce</strong> to implement a custom type-ahead feature that tells you when you have a valid Steam ID as you type.</p>
+                <p class="hidden">My struggles with the Steam API certainly inspired me to write better APIs myself. It was a major factor in pushing me to try out <strong>GraphQL</strong> on my next project.</p>
+                <div class="readmore"><button id="steam-battle-readmore">Read more...</button></div>
+              </section>
+              <section class="button-row">
+                <a href="http://steam-battle.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Steam Battle">
+                  <i class="fa fa-external-link" aria-hidden="true" /> Live Site
+                </a>
+                <a href="https://github.com/gilmoreg/steam-battle" rel="noopener noreferrer" target="_blank" title="Steam Battle on Github">
+                  <i class="fa fa-github" aria-hidden="true" /> See the Code
+                </a>
+              </section>
+            </section>
+          </section>
+          <section class="project" id="referendus">
+            <a href="http://referendus.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Referendus">
+              <img src="https://cloud.githubusercontent.com/assets/18176333/22914304/5e6e4e3e-f235-11e6-8c51-b1622ae48f38.png" alt="Referendus" />
+            </a>
+            <section class="content">
+              <h2 class="title">REFERENDUS</h2>
+              <div class="description" id="referendus-description"></div>
+              <ul class="topics" id="referendus-topics"></ul>
+              <section id="referendus-copy">
+                <p class="fade">My first fullstack project as a <strong>Thinkful</strong> student. I really wanted to challenge myself to make a complicated back end, with flexible endpoints including authentication. I think I was able to take a relatively complicated problem and rationally organize it.</p>
+                <p class="hidden">One challenge I encountered was that due to security concerns clipboard functions must be invoked a very short time after the user action that triggers them, meaning that I could not wait for the network. This meant that I had to develop a local cache that would mirror the server’s data and keep them in sync, so that the user would be getting accurate results when copying to the clipboard. I toyed with using <strong>LocalStorage</strong> for this, but it turned out that memory was sufficient. I did however use LocalStorage to store the user’s format choice.</p>
+                <p class="hidden">Since I used <strong>Bootstrap</strong> for this project, I was able to focus more of my development time on the Javascript on both the front and back end. This project is where I really got my feet wet with <strong>Passport</strong> and session management. I also gained a ton of testing experience with this project; I learned to write tests for <strong>MongoDB</strong> transactions, <strong>Express</strong> endpoints, including asynchronous code. All of this knowledge carried forward into my later projects where I switched testing frameworks.</p>
+                <div class="readmore"><button id="referendus-readmore">Read more...</button></div>
+              </section>
+              <section class="button-row">
+                <a href="http://referendus.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Referendus">
+                  <i class="fa fa-external-link" aria-hidden="true" /> Live Site
+                </a>
+                <a href="https://github.com/gilmoreg/referendus" rel="noopener noreferrer" target="_blank" title="Referendus on Github">
+                  <i class="fa fa-github" aria-hidden="true" /> See the Code
+                </a>
+              </section>
+            </section>
+          </section>
+          <section class="project" id="pick">
+            <a href="http://pick.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Pick">
+              <img src="https://res.cloudinary.com/dk85nueap/image/upload/v1496772162/pick-large-montage_jxvg6l.png" alt="Pick" />
+            </a>
+            <section class="content">
+              <h2 class="title">PICK</h2>
+              <div class="description" id="pick-description"></div>
+              <ul class="topics" id="pick-topics"></ul>
+              <section id="pick-copy">
+                <p class="fade">Many fans of anime keep track of shows they plan to watch on a site called Myanimelist. Many times this list can grow to dozens of shows, leaving them flustered as to what they should watch next. They end up posting their list on social media asking others to help them choose. <strong>Pick</strong> makes this easier by generating a poll out of a user's plan to watch list which they can then share. Others can quickly vote for a show without having to type out a comment or an argument, and the user can quickly see which option is a crowd favorite.</p>
+                <p class="hidden">This was my first project using <strong>Koa</strong>. I went in thinking I was going to learn all about generators in Javascript, only to find that they were being deprecated in favor of <strong>async/await</strong>, something I already know quite well. It was still a learning experience! Koa is different from Express in that it comes with very little out of the box. Even routing needs to be imported as a dependency. However, with Koa deprecating generators, much of the middleware on NPM is no longer suitable, and I had to do a lot of research to find packages that were compatible with Koa 2.</p>
+                <p class="hidden">One interesting challenge I found was in implementing <strong>rate limiting</strong>. The package I chose was only applying limiting at random to my great frustration; after stepping through the source I learned that the regex test for which path to limit was failing at random. It was then that I learned what I shall never forget: that the <strong>Javascript RegExp object</strong> is stateful when the global flag is enabled. Thus the results were different depending on whether another test was being run at the same time. Another painful lesson learned!</p>
+                <div class="readmore"><button id="pick-readmore">Read more...</button></div>
+              </section>
+              <section class="button-row">
+                <a href="http://pick.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Pick">
+                  <i class="fa fa-external-link" aria-hidden="true" /> Live Site
+                </a>
+                <a href="https://github.com/gilmoreg/pick" rel="noopener noreferrer" target="_blank" title="Pick on Github">
+                  <i class="fa fa-github" aria-hidden="true" /> See the Code
+                </a>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+      <!-- SKILLS -->
+      <section class="onecolumn skills">
+        <h1>SKILLS</h1>
+        <section class="skillsColumns">
+          <section class="threecolumn">
+            <h4 class="skillTitle">SERVER SIDE</h4>
+            <ul class="skills">
+              <li class="skill"><img src="assets/svg/node.svg" title="Node"></li>
+              <li class="skill"><img src="assets/svg/express.png" title="Express"></li>
+              <li class="skill"><img src="assets/svg/mongodb.svg" title="MongoDB"></li>
+              <li class="skill"><img src="assets/svg/PassportJS.svg" title="Passport"></li>
+              <li class="skill"><img src="assets/svg/graphql.png" title="GraphQL"></li>
+              <li class="skill"><img src="assets/svg/serverless-framework-logo.png" title="Serverless Framework"></li>
+              <li class="skill">AWS Lambda</li>
+            </ul>
+          </section>
+          <section class="threecolumn">
+            <h4 class="skillTitle">DEV OPS</h4>
+            <ul class="skills">
+              <li class="skill"><img src="assets/svg/heroku.svg" title="Heroku"></li>
+              <li class="skill"><img src="assets/svg/docker.svg" title="Docker"></li>
+              <li class="skill"><img src="assets/svg/travis-ci.svg" title="Travis CI"></li>
+            </ul>
+            <h4 class="skillTitle">UNIT TESTING</h4>
+            <ul class="skills">
+              <li class="skill">
+                <img src="assets/svg/mocha.svg" title="Mocha" id="mocha">
+                <img src="assets/svg/chai.png" title="Chai" id="chai">
+              </li>
+              <li class="skill"><img src="assets/svg/jest.svg" title="Jest"></li>
+            </ul>
+          </section>
+          <section class="threecolumn">
+            <h4 class="skillTitle">FRONT END</h4>
+            <ul class="skills">
+              <li class="skill"><img src="assets/svg/css3_html5.svg" title="CSS3 HTML5"></li>
+              <li class="skill"><img src="assets/svg/babel.svg" title="Babel"></li>
+              <li class="skill"><img src="assets/svg/react.svg" title="React"></li>
+              <li class="skill"><img src="assets/svg/redux.png" title="Redux"></li>
+              <li class="skill"><img src="assets/svg/JQuery.svg" title="JQuery"></li>
+              <li class="skill"><img src="assets/svg/bootstrap.svg" title="Bootstrap"></li>              
+              <li class="skill"><img src="assets/svg/webpack2.png" title="Webpack 2"></li>
+            </ul>
+          </section>
+        </section>
+      </section>
+      <!-- OTHER STUFF -->
+      <section class="onecolumn otherstuff">
+        <h1>OTHER STUFF</h1>
+        <p>Open Source contributions:</p>
+          <ul>
+              <li>
+                  <a href="https://github.com/HabitRPG/habitica" rel="noopener noreferrer" target="_blank" title="Habitica">Habitica</a>:
+                  PRs <a href="https://github.com/HabitRPG/habitica/pull/8771" rel="noopener noreferrer" target="_blank" title="PR#8771">#8771</a> (merged),
+                  <a href="https://github.com/HabitRPG/habitica/pull/8809" rel="noopener noreferrer" target="_blank" title="PR#8809">#8809</a> (open),
+                  <a href="https://github.com/HabitRPG/habitica/pull/8810" rel="noopener noreferrer" target="_blank" title="PR#8810">#8810</a> (open) increased test coverage
+              </li>
+          </ul>
+        <p>Other links:</p>
+        <ul>
+          <li><a href="https://www.hackerrank.com/gilmoreg" rel="noopener noreferrer" target="_blank" title="Hackerrank">HackerRank</a></li>
+          <li><a href="https://codepen.io/gilmoreg/" rel="noopener noreferrer" target="_blank" title="Codepen">Codepen</a></li>
+          <li><a href="https://github.com/gilmoreg/JavaScript30" rel="noopener noreferrer" target="_blank" title="Javascript30">Javascript30 solutions</a> (in progress)</li>
+          <li><a href="assets/LearnNodeCertificate.pdf" rel="noopener noreferrer" target="_blank" title="Learn Node Certificate">Certificate of Completion for Wes Bos's Learn Node Course</a></li>
+        </ul>
+      </section>
+      <p class="footer">&copy; 2017 by Grayson Gilmore. All rights reserved.</p>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
