@@ -54,7 +54,6 @@ function readMoreOrLess(e) {
     link.addEventListener('click', function () { // eslint-disable-line
       const target = document.querySelector(`#${this.dataset.target}`);
       window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
-      console.log(target.offsetTop);
     });
   });
 })();
