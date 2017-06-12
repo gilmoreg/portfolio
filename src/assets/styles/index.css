@@ -36,6 +36,9 @@ body {
   opacity: 0;
 }
 
+/*
+  TOP NAV
+*/
 nav {
   padding: 5px 20px;
   background-color: #657075;
@@ -64,6 +67,25 @@ nav h1 {
 nav h4 {
   color: #A7ACAE;
   font-size: 14px;
+}
+
+/*
+  STICKY NAV
+*/
+.sticky {
+  text-align: center;
+  background-color: white;
+  color: #626E73;
+  box-shadow: 0 0 10px rgba(0,0,0,.25);
+}
+
+.sticky-links {
+  list-style: none;
+  padding-left: 0;
+}
+.sticky-links li {
+  display: inline-block;
+  padding: 0 8px;
 }
 
 h4 {

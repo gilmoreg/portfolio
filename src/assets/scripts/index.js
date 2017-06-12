@@ -42,4 +42,6 @@ function readMoreOrLess(e) {
     document.querySelector('body').classList.add('body-fade-in');
   })
   .catch(err => console.error(err));
+
+  
 })();
