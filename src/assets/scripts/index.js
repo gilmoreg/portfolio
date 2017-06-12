@@ -43,5 +43,10 @@ function readMoreOrLess(e) {
   })
   .catch(err => console.error(err));
 
-  
+  // Sticky nav
+  const sticky = document.querySelector('.sticky');
+  window.addEventListener('scroll', function () { // eslint-disable-line func-names
+    if (this.scrollY >= 90) sticky.classList.add('sticky-scrolled');
+    else sticky.classList.remove('sticky-scrolled');
+  });
 })();
