@@ -11,7 +11,7 @@
     <title>Grayson Gilmore - Portfolio</title>
   </head>
   <body>
-    <nav>
+    <header>
       <img src="https://res.cloudinary.com/dk85nueap/image/upload/v1494642367/avatar_g1a9xb.jpg" width="64" height="64" alt="Grayson Gilmore">
       <div class="name">
         <h1>GRAYSON GILMORE</h1>
@@ -23,9 +23,17 @@
         <li><a target="_blank" rel="noopener noreferrer" href="assets/grayson_gilmore_resume.pdf"><i class="fa fa-file-pdf-o" aria-hidden="true" title="resume"></i></a></li>
         <li><a target="_blank" rel="noopener noreferrer" href="mailto:gilmoreg@live.com"><i class="fa fa-envelope" aria-hidden="true" title="email me!"></i></a></li>
       </ul>
+    </header>
+    <nav class="sticky">
+      <ul class="sticky-links">
+        <li><a data-target="greetings">About Me</a></li>
+        <li><a data-target="projects">Projects</a></li>
+        <li><a data-target="skills">Skills</a></li>
+        <li><a data-target="otherstuff">Other Stuff</a></li>
+      </ul>
     </nav>
     <main>
-      <section class="onecolumn greeting">
+      <section class="onecolumn greeting" id="greetings">
         <h1>SALUTATIONS!</h1>
         <p>I'm Grayson Gilmore! I've been on a winding journey, from network operations technician to university professor, but I am finally coming home to my first love: writing software. 
           I learned fullstack web development and built this portfolio in less than six months while working full time as a professor.
@@ -34,7 +42,7 @@
       </section>
       <!-- PROJECTS -->
       <section class="onecolumn" id="projects">
-        <h1 style="margin-left: 0">PROJECTS</h1>
+        <h1>PROJECTS</h1>
         <section class="portfolio">
           <section class="project" id="condictor">
             <a href="http://condictor.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Condictor">
@@ -70,8 +78,7 @@
               <div class="description" id="steam-battle-description"></div>
               <ul class="topics" id="steam-battle-topics"></ul>
               <section id="steam-battle-copy">
-                <p class="fade">My first <strong>React/Redux</strong> project. I never expected React to be so much fun!</p>
-                <p class="hidden">The major challenge on this project was struggling with the <strong>Steam API</strong>. It is a poor quality API: it is highly fragmented, outdated, and inadequately documented. It has multiple endpoints using different formats with no consistent return pattern. Although I think this project was successful in the end, I had to scrap many plans to make the scoring more complex and interesting due to limitations of the API.</p>
+                <p class="fade">My first <strong>React/Redux</strong> project. I never expected React to be so much fun! The major challenge on this project was struggling with the <strong>Steam API</strong>. It is a poor quality API: it is highly fragmented, outdated, and inadequately documented. It has multiple endpoints using different formats with no consistent return pattern. Although I think this project was successful in the end, I had to scrap many plans to make the scoring more complex and interesting due to limitations of the API.</p>
                 <p class="hidden">Since the Steam API does not support <strong>CORS</strong>, I had to create a backend proxy. Since I love to write APIs so much, I was grateful for the chance to do so. Originally I built a Node/Express server to handle the job, but later took this as an opportunity to learn <strong>Google Cloud Functions</strong> and converted my endpoints over.</p>
                 <p class="hidden">On the front end, dealing with the Steam APIs rate limit meant that I had to throttle my network calls. I used <strong>lodash</strong> <strong>debounce</strong> to implement a custom type-ahead feature that tells you when you have a valid Steam ID as you type.</p>
                 <p class="hidden">My struggles with the Steam API certainly inspired me to write better APIs myself. It was a major factor in pushing me to try out <strong>GraphQL</strong> on my next project.</p>
@@ -138,7 +145,7 @@
         </section>
       </section>
       <!-- SKILLS -->
-      <section class="onecolumn skills">
+      <section class="onecolumn skills" id="skills">
         <h1>SKILLS</h1>
         <section class="skillsColumns">
           <section class="threecolumn">
@@ -184,7 +191,7 @@
         </section>
       </section>
       <!-- OTHER STUFF -->
-      <section class="onecolumn otherstuff">
+      <section class="onecolumn otherstuff" id="otherstuff">
         <h1>OTHER STUFF</h1>
         <p>Open Source contributions:</p>
           <ul>

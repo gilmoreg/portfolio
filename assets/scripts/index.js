@@ -41,5 +41,19 @@ function readMoreOrLess(e) {
     });
     document.querySelector('body').classList.add('body-fade-in');
   })
-  .catch(err => console.error(Error(err)));
+  .catch(err => console.error(err));
+
+  // Sticky nav
+  const sticky = document.querySelector('.sticky');
+  window.addEventListener('scroll', function () { // eslint-disable-line func-names
+    if (this.scrollY >= 90) sticky.classList.add('sticky-scrolled');
+    else sticky.classList.remove('sticky-scrolled');
+  });
+  Array.from(document.querySelectorAll('[data-target]'))
+  .forEach((link) => {
+    link.addEventListener('click', function () { // eslint-disable-line
+      const target = document.querySelector(`#${this.dataset.target}`);
+      window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+    });
+  });
 })();
