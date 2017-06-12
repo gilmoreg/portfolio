@@ -49,4 +49,12 @@ function readMoreOrLess(e) {
     if (this.scrollY >= 90) sticky.classList.add('sticky-scrolled');
     else sticky.classList.remove('sticky-scrolled');
   });
+  Array.from(document.querySelectorAll('[data-target]'))
+  .forEach((link) => {
+    link.addEventListener('click', function () { // eslint-disable-line
+      const target = document.querySelector(`#${this.dataset.target}`);
+      window.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+      console.log(target.offsetTop);
+    });
+  });
 })();
