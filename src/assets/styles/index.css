@@ -101,6 +101,7 @@ header h4 {
   padding: 0 8px;
   margin-top: 10px;
   flex-grow: 1;
+  cursor: pointer;
 }
 
 .sticky-scrolled {
