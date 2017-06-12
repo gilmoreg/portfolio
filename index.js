@@ -14,7 +14,7 @@ const fetchGithubRepo = repo =>
 
 const buildTopicsHtml = (topics) => {
   if (!topics || !topics.length) return '';
-  return topics.map(t => `<li key=${t}>${t.toUpperCase()}</li>`).join('');
+  return topics.map(t => `<li>${t.toUpperCase()}</li>`).join('');
 };
 
 function readMoreOrLess(e) {
@@ -40,6 +40,4 @@ function readMoreOrLess(e) {
     document.querySelector('body').classList.add('body-fade-in');
   })
   .catch(err => console.error(Error(err)));
-
-
 })();
