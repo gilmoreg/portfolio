@@ -25,6 +25,8 @@ function readMoreOrLess(e) {
     if (index === 0) p.classList.toggle('fade');
     else p.classList.toggle('hidden');
   });
+  if (this.innerHTML === 'Read more...') this.innerHTML = 'Read less...';
+  else this.innerHTML = 'Read more...';
 }
 
 (() => {
