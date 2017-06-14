@@ -396,6 +396,21 @@ h4 {
 }
 
 /*
+  FOOTER
+*/
+footer {
+  background-color: #657075;
+  color: white;
+  width: 100%;
+  text-align: center;
+  height: 40px;
+}
+
+footer .links {
+  float: none;
+}
+
+/*
  * ANIMATIONS / TRANSITIONS
  */
 .body-fade-in {
