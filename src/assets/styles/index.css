@@ -85,16 +85,16 @@ header h4 {
   box-shadow: 0 0 10px rgba(0,0,0,.25);
   height: 40px;
   position: relative;
-  max-width: 820px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .sticky-links {
   list-style: none;
   padding-left: 0;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
+  max-width: 820px;
 }
 .sticky-links li {
   display: inline-block;
