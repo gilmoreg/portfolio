@@ -70,24 +70,25 @@
             </section>
           </section>
           <section class="project" id="referendus">
-            <a href="http://referendus.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Referendus">
-              <img src="https://user-images.githubusercontent.com/18176333/27062750-d2aa7aea-4fb2-11e7-90aa-61ed9459127d.png" alt="Referendus" />
+            <a href="http://referendus-angular.herokuapp.com" rel="noopener noreferrer" target="_blank" title="Referendus">
+              <img src="http://res.cloudinary.com/dk85nueap/image/upload/v1503769922/Referendus_Summary_v9orem.png" alt="Referendus" />
             </a>
             <section class="content">
               <h2 class="title">REFERENDUS</h2>
-              <div class="description" id="referendus-description"></div>
-              <ul class="topics" id="referendus-topics"></ul>
-              <section id="referendus-copy">
-                <p class="fade">My first fullstack project as a <strong>Thinkful</strong> student. I really wanted to challenge myself to make a complicated back end, with flexible endpoints including authentication. I think I was able to take a relatively complicated problem and rationally organize it.</p>
-                <p class="hidden">One challenge I encountered was that due to security concerns clipboard functions must be invoked a very short time after the user action that triggers them, meaning that I could not wait for the network. This meant that I had to develop a local cache that would mirror the server’s data and keep them in sync, so that the user would be getting accurate results when copying to the clipboard. I toyed with using <strong>LocalStorage</strong> for this, but it turned out that memory was sufficient. I did however use LocalStorage to store the user’s format choice.</p>
-                <p class="hidden">Since I used <strong>Bootstrap</strong> for this project, I was able to focus more of my development time on the Javascript on both the front and back end. This project is where I really got my feet wet with <strong>Passport</strong> and session management. I also gained a ton of testing experience with this project; I learned to write tests for <strong>MongoDB</strong> transactions, <strong>Express</strong> endpoints, including asynchronous code. All of this knowledge carried forward into my later projects where I switched testing frameworks.</p>
-                <div class="readmore"><button id="referendus-readmore">Read more...</button></div>
+              <div class="description" id="referendus_angular-description"></div>
+              <ul class="topics" id="referendus_angular-topics"></ul>
+              <section id="referendus_angular-copy">
+                <p class="fade">My first <strong>Angular</strong> project. I originally built this app using <strong>jQuery</strong> but the complexity of the code quickly multiplied and made it difficult to debug and reason about. I wanted to learn Angular and this project stuck out as a great candidate for a port.</p>
+                <p class="hidden">I quickly taught myself Angular and the basics of <strong>Typescript</strong>, <strong>ngrx</strong>, and <strong>reactive forms</strong>. Ngrx was easy to learn given how similar it is to <strong>Redux</strong>. My biggest struggles were learning how to use <strong>ngx-bootstrap</strong> and how to manage state and events through its modals. They don't show up in <strong>Augury</strong> so debugging them is a pain point, but manageable.</p>
+                <p class="hidden">While porting this app I also took the opportunity to clean up the back end. I switched the testing framework from Mocha to <strong>Jest</strong>, which I really like! I also refactored the code into an MVC pattern and used async/await for clarity in the code. Comparing this to my older code makes me feel great about how much I've grown as a developer!</p>
+                <p class="hidden"><strong>NOTE:</strong> To see the original jQuery version of this app, see <a href="https://github.com/gilmoreg/referendus" rel="noopener noreferrer" target="_blank" title="Referendus">here</a>.</p>
+                <div class="readmore"><button id="referendus_angular-readmore">Read more...</button></div>
               </section>
               <section class="button-row">
-                <a href="http://referendus.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Referendus">
+                <a href="https://referendus-angular.herokuapp.com/" rel="noopener noreferrer" target="_blank" title="Referendus">
                   <i class="fa fa-external-link" aria-hidden="true"></i> Live Site
                 </a>
-                <a href="https://github.com/gilmoreg/referendus" rel="noopener noreferrer" target="_blank" title="Referendus on Github">
+                <a href="https://github.com/gilmoreg/referendus_angular" rel="noopener noreferrer" target="_blank" title="Referendus on Github">
                   <i class="fa fa-github" aria-hidden="true"></i> See the Code
                 </a>
               </section>

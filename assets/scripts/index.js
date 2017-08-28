@@ -30,7 +30,7 @@ function readMoreOrLess(e) {
 }
 
 (() => {
-  const repoNames = ['condictor', 'steam-battle', 'referendus', 'pick'];
+  const repoNames = ['condictor', 'steam-battle', 'referendus_angular', 'pick'];
   const getRepos = repoNames.map(repo => fetchGithubRepo(repo));
   Promise.all(getRepos)
   .then((repos) => {
