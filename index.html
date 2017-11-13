@@ -94,6 +94,31 @@
               </section>
             </section>
           </section>
+          <section class="project" id="legocollector">
+            <a href="http://gilmoreg.github.io/legocollector" rel="noopener noreferrer" target="_blank" title="Lego Collector">
+              <img src="https://res.cloudinary.com/dk85nueap/image/upload/c_scale,w_600/v1510609925/Lego_Collector_Screenshot_zapupy.png" alt="Lego Collector" />
+            </a>
+            <section class="content">
+              <h2 class="title">LEGO COLLECTOR</h2>
+              <div class="description" id="legocollector-description"></div>
+              <ul class="topics" id="legocollector-topics"></ul>
+              <section id="legocollector-copy">
+                <p class="fade">Originally my goal for this project was to learn <strong>Flask</strong>, but in order to learn Flask I had to learn several other technologies as well, making this project an enormous learning experience.</p>
+                <p class="hidden">In order to get Flask running in Docker, I had to learn how to use <strong>Docker-Compose</strong>, which I will be using in every project from now on. I also had to figure out how to get <strong>Travis CI</strong> to work with a multilingual repository (Python on the back end, React Javascript on the front end), and also how to deploy them separately. I also had to learn how to run tests in Python (ultimately I settled for <strong>pytest</strong>) as part of the CI/CD process in Travis.</p>
+                <p class="hidden">I also got more experience with relational databases, using <strong>Postgresql</strong> with <strong>Sqlalchemy</strong>. I had to learn how to do many-to-many relationships in tables rather than the NoSQL ways I was used to. I also had to update the database on a fixed interval; I experimented with <strong>Celery</strong> and <strong>RabbitMQ</strong> for this, but ultimately I used an <strong>AWS Lambda</strong> to call an endpoint to get around the problem of Heroku sleeping dynos.</p>
+                <p class="hidden">Finally, I implemented <strong>JSON Web Tokens</strong> for authentication rather than the session cookie approach I had always used previously. On the client side, I tried out <strong>Styled Components</strong> and found them to be a really great solution that declutters the project structure; deleting all those CSS files was really satisfying!</p>
+                <div class="readmore"><button id="legocollector-readmore">Read more...</button></div>
+              </section>
+              <section class="button-row">
+                <a href="http://gilmoreg.github.io/legocollector" rel="noopener noreferrer" target="_blank" title="Lego Collector">
+                  <i class="fa fa-external-link" aria-hidden="true"></i> Live Site
+                </a>
+                <a href="https://github.com/gilmoreg/legocollector" rel="noopener noreferrer" target="_blank" title="Lego Collector on Github">
+                  <i class="fa fa-github" aria-hidden="true"></i> See the Code
+                </a>
+              </section>
+            </section>
+          </section>
           <section class="project" id="steam-battle">
             <a href="http://steam-battle.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Steam Battle">
               <img src="https://user-images.githubusercontent.com/18176333/27062639-ddcb0120-4fb1-11e7-817a-908b6dc01acb.png" alt="Steam Battle" />
@@ -119,31 +144,6 @@
               </section>
             </section>
           </section>
-          <section class="project" id="pick">
-            <a href="http://pick.gilmoreg.com" rel="noopener noreferrer" target="_blank" title="Pick">
-              <img src="https://user-images.githubusercontent.com/18176333/27062813-6597a576-4fb3-11e7-91ff-eff193dfed65.png" alt="Pick" />
-            </a>
-            <section class="content">
-              <h2 class="title">PICK</h2>
-              <div class="description" id="pick-description"></div>
-              <ul class="topics" id="pick-topics"></ul>
-              <section id="pick-copy">
-                <p class="fade">Many fans of anime keep track of shows they plan to watch on a site called Myanimelist. Many times this list can grow to dozens of shows, leaving them flustered as to what they should watch next. They end up posting their list on social media asking others to help them choose. <strong>Pick</strong> makes this easier by generating a poll out of a user's plan to watch list which they can then share. Others can quickly vote for a show without having to type out a comment or an argument, and the user can quickly see which option is a crowd favorite.</p>
-                <p class="hidden">This was my first project using <strong>Koa</strong>. I went in thinking I was going to learn all about generators in Javascript, only to find that they were being deprecated in favor of <strong>async/await</strong>, something I already know quite well. It was still a learning experience! Koa is different from Express in that it comes with very little out of the box. Even routing needs to be imported as a dependency. However, with Koa deprecating generators, much of the middleware on NPM is no longer suitable, and I had to do a lot of research to find packages that were compatible with Koa 2.</p>
-                <p class="hidden">One interesting challenge I found was in implementing <strong>rate limiting</strong>. The package I chose was only applying limiting at random to my great frustration; after stepping through the source I learned that the regex test for which path to limit was failing at random. It was then that I learned what I shall never forget: that the <strong>Javascript RegExp object</strong> is stateful when the global flag is enabled. Thus the results were different depending on whether another test was being run at the same time. Another painful lesson learned!</p>
-                <p class="hidden"><strong>NOTE:</strong> I also created a Python/Django port of this app which you can see <a href="https://github.com/gilmoreg/pick_django" rel="noopener noreferrer" target="_blank" title="Pick">here</a>.</p>
-                <div class="readmore"><button id="pick-readmore">Read more...</button></div>
-              </section>
-              <section class="button-row">
-                <a href="https://www.pick.moe" rel="noopener noreferrer" target="_blank" title="Pick">
-                  <i class="fa fa-external-link" aria-hidden="true"></i> Live Site
-                </a>
-                <a href="https://github.com/gilmoreg/pick" rel="noopener noreferrer" target="_blank" title="Pick on Github">
-                  <i class="fa fa-github" aria-hidden="true"></i> See the Code
-                </a>
-              </section>
-            </section>
-          </section>
         </section>
       </section>
       <!-- SKILLS -->
@@ -159,7 +159,9 @@
               <li class="skill"><img src="assets/svg/PassportJS.svg" title="Passport"></li>
               <li class="skill"><img src="assets/svg/graphql.png" title="GraphQL"></li>
               <li class="skill"><img src="assets/svg/serverless-framework-logo.png" title="Serverless Framework"></li>
-              <li class="skill">AWS Lambda</li>
+              <li class="skill"><img src="assets/svg/flask.svg" title="Python Flask"></li>
+              <li class="skill"><img src="assets/svg/django.svg" title="Python Django"></li>
+              <li class="skill"><img src="assets/svg/sqlalchemy.svg" style="width: 110px" title="Sqlalchemy"></li>
             </ul>
           </section>
           <section class="threecolumn">
@@ -176,6 +178,7 @@
                 <img src="assets/svg/chai.png" title="Chai" id="chai">
               </li>
               <li class="skill"><img src="assets/svg/jest.svg" title="Jest"></li>
+              <li class="skill"><img src="assets/svg/pytest.svg" style="width: 110px" title="Pytest"></li>
             </ul>
           </section>
           <section class="threecolumn">
@@ -187,7 +190,8 @@
               <li class="skill"><img src="assets/svg/redux.png" title="Redux"></li>
               <li class="skill"><img src="assets/svg/JQuery.svg" title="JQuery"></li>
               <li class="skill"><img src="assets/svg/bootstrap.svg" title="Bootstrap"></li>              
-              <li class="skill"><img src="assets/svg/webpack2.png" title="Webpack 2"></li>
+              <li class="skill" style="margin-bottom: 0"><img src="assets/svg/webpack2.png" title="Webpack 2"></li>
+              <li class="skill"><img src="assets/svg/angular.svg" style="width: 60px" title="Angular 4"></li>
             </ul>
           </section>
         </section>
