@@ -1,4 +1,5 @@
-const fetchGithubRepo = repo =>
+(() => {
+  const fetchGithubRepo = repo =>
   fetch(`https://api.github.com/repos/gilmoreg/${repo}`, {
     headers: {
       Accept: 'application/vnd.github.mercy-preview+json',
@@ -12,24 +13,23 @@ const fetchGithubRepo = repo =>
   }))
   .catch(err => new Error(err));
 
-const buildTopicsHtml = (topics) => {
-  if (!topics || !topics.length) return '';
-  return topics.map(t => `<li>${t.toUpperCase()}</li>`).join('');
-};
+  const buildTopicsHtml = (topics) => {
+    if (!topics || !topics.length) return '';
+    return topics.map(t => `<li>${t.toUpperCase()}</li>`).join('');
+  };
 
-function readMoreOrLess(e) {
-  e.preventDefault();
-  const repo = this.id.split('-readmore')[0];
-  Array.from(document.querySelectorAll(`#${repo}-copy > p`))
-  .forEach((p, index) => {
-    if (index === 0) p.classList.toggle('fade');
-    else p.classList.toggle('hidden');
-  });
-  if (this.innerHTML === 'Read more...') this.innerHTML = 'Read less...';
-  else this.innerHTML = 'Read more...';
-}
+  function readMoreOrLess(e) {
+    e.preventDefault();
+    const repo = this.id.split('-readmore')[0];
+    Array.from(document.querySelectorAll(`#${repo}-copy > p`))
+    .forEach((p, index) => {
+      if (index === 0) p.classList.toggle('fade');
+      else p.classList.toggle('hidden');
+    });
+    if (this.innerHTML === 'Read more...') this.innerHTML = 'Read less...';
+    else this.innerHTML = 'Read more...';
+  }
 
-(() => {
   const repoNames = ['condictor', 'legocollector', 'steam-battle', 'referendus_angular'];
   const getRepos = repoNames.map(repo => fetchGithubRepo(repo));
   Promise.all(getRepos)
