@@ -39,6 +39,8 @@
       document.querySelector(`#${repo.name}-topics`).innerHTML = buildTopicsHtml(repo.topics);
       document.querySelector(`#${repo.name}-readmore`).addEventListener('click', readMoreOrLess);
     });
+    // This one is a special case since it doesn't have a repo
+    document.querySelector('#habitica-readmore').addEventListener('click', readMoreOrLess);
     document.querySelector('body').classList.add('body-fade-in');
   })
   .catch(err => console.error(err));
