@@ -27,7 +27,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -40,7 +40,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Grayson Gilmore - Portfolio',
-      hash: true,
       template: path.resolve(__dirname, './src/templates/index.pug')
     }),
     new MiniCssExtractPlugin({
