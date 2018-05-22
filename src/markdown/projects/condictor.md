@@ -1,3 +1,7 @@
-# Condictor
+As this was my final project as a **Thinkful** student, I really wanted to shoot for the moon on this one. I challenged myself to pick up several frameworks and libraries outside the curriculum and broaden my knowledge as much as possible.
 
-Stuff about condictor
+I decided early that I would try out **GraphQL** and that turned out to be an amazing adventure of highs and lows! The server side implementation was unexpectedly easy; the challenges really came on the client side. I was drawn to **Apollo Client** and I tried hard to make it work, but ultimately decided that this project wasn’t a good fit. I learned a ton about **Redux** trying to make it play along with Apollo, and I experienced some of the pains of dealing with emerging technology (at one point discovering the source of a problem in a change that wasn’t documented outside of the changelog). In the end it made more sense for me to use **Lokka** in my Redux actions, but I was grateful for the experience.
+
+I also had quite the journey troubleshooting a **Passport** problem (which turned out to be, as it so often is, a simple mistake in what looked like solid code). It was at this point that I learned about using **Chrome DevTools** to debug **Node**. I was stepping through the **Express** and **Passport** source line by line trying to discover the problem. I got to see how Express middleware layers work in practice - quite an educational experience!
+
+To push myself even further, I deployed this project using **Docker**, and not only that, but building and deploying the Docker image through **Travis CI**. Getting that to work was so satisfying!</p>

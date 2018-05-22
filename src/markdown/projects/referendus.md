@@ -1,3 +1,0 @@
-# Referendus
-
-Stuff about referendus

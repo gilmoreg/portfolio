@@ -18,40 +18,8 @@
       "travis-ci"
     ],
     "repoUrl": "https://github.com/gilmoreg/condictor",
-    "siteUrl": "http://condictor.gilmoreg.com/"
-  },
-  {
-    "name": "legocollector",
-    "description": "Full Stack Python/Flask + React Tools for Lego Collectors",
-    "topics": [
-      "aws-lambda",
-      "docker",
-      "flask",
-      "lego",
-      "postgresql",
-      "react",
-      "redux",
-      "sqlalchemy",
-      "styled-components"
-    ],
-    "repoUrl": "https://github.com/gilmoreg/legocollector",
-    "siteUrl": "https://gilmoreg.github.io/legocollector/"
-  },
-  {
-    "name": "steam-battle",
-    "description": "Compare two Steam profiles and declare a winner!",
-    "topics": [
-      "axios",
-      "chai",
-      "google-cloud-functions",
-      "mocha",
-      "react",
-      "redux",
-      "redux-thunk",
-      "steam-api"
-    ],
-    "repoUrl": "https://github.com/gilmoreg/steam-battle",
-    "siteUrl": "http://steam-battle.gilmoreg.com/"
+    "siteUrl": "http://condictor.gilmoreg.com/",
+    "banner": "https://user-images.githubusercontent.com/18176333/27095456-51247972-5033-11e7-95a6-2de8c05cefe4.png"
   },
   {
     "name": "referendus_angular",
@@ -68,33 +36,71 @@
       "travis-ci"
     ],
     "repoUrl": "https://github.com/gilmoreg/referendus_angular",
-    "siteUrl": "https://referendus-angular.herokuapp.com"
+    "siteUrl": "https://referendus-angular.herokuapp.com",
+    "banner": "http://res.cloudinary.com/dk85nueap/image/upload/v1503769922/Referendus_Summary_v9orem.png"
+  },
+  {
+    "name": "legocollector",
+    "description": "Full Stack Python/Flask + React Tools for Lego Collectors",
+    "topics": [
+      "aws-lambda",
+      "docker",
+      "flask",
+      "lego",
+      "postgresql",
+      "react",
+      "redux",
+      "sqlalchemy",
+      "styled-components"
+    ],
+    "repoUrl": "https://github.com/gilmoreg/legocollector",
+    "siteUrl": "https://gilmoreg.github.io/legocollector/",
+    "banner": "https://res.cloudinary.com/dk85nueap/image/upload/c_scale,w_600/v1510609925/Lego_Collector_Screenshot_zapupy.png"
+  },
+  {
+    "name": "steam-battle",
+    "description": "Compare two Steam profiles and declare a winner!",
+    "topics": [
+      "axios",
+      "chai",
+      "google-cloud-functions",
+      "mocha",
+      "react",
+      "redux",
+      "redux-thunk",
+      "steam-api"
+    ],
+    "repoUrl": "https://github.com/gilmoreg/steam-battle",
+    "siteUrl": "http://steam-battle.gilmoreg.com/",
+    "banner": "https://user-images.githubusercontent.com/18176333/27062639-ddcb0120-4fb1-11e7-817a-908b6dc01acb.png"
   }]
 
 mixin project(repo)
-  section.project(id=name)
-    h2.title #{repo.name.toUpperCase()}
-    .description= repo.description
-    ul.topics
-      each topic in repo.topics
-        li= topic.toUpperCase()
-    section(id=`${repo.name}-copy`)
-      case repo.name
-        when "condictor"
-          include:markdown-it ../markdown/projects/condictor.md
-        when "referendus"
-          include:markdown-it ../markdown/projects/referendus.md
-        when "legocollector"
-          include:markdown-it ../markdown/projects/legocollector.md
-        when "steam-battle"
-          include:markdown-it ../markdown/projects/steam-battle.md
-    section.button-row
-      a(href=repo.siteUrl rel='noopener noreferrer' target='_blank' title=repo.name)
-        i(class='fa fa-external-link' aria-hidden='true')
-        span Live Site
-      a(href=repo.repoUrl rel='noopener noreferrer' target='_blank' title=repo.name)
-        i(class='fa fa-github' aria-hidden='true')
-        span See the Code
+  article.project(id=name)
+    a(href=repo.siteUrl rel='noopener noreferrer' target='_blank')
+      img(src=repo.banner alt=repo.name)
+    section.content
+      h2.title #{repo.name.toUpperCase()}
+      .description= repo.description
+      ul.topics
+        each topic in repo.topics
+          li= topic.toUpperCase()
+      section(id=`${repo.name}-copy`)
+        case repo.name
+          when "condictor": include:markdown-it ../markdown/projects/condictor.md
+          when "referendus_angular": include:markdown-it ../markdown/projects/referendus_angular.md
+          when "legocollector": include:markdown-it ../markdown/projects/legocollector.md
+          when "steam-battle": include:markdown-it ../markdown/projects/steam-battle.md
+        .readmore
+          button(id=`${repo-name}-readmore`)
+            span Read more...
+      section.button-row
+        a(href=repo.siteUrl rel='noopener noreferrer' target='_blank' title=repo.name)
+          i(class='fa fa-external-link' aria-hidden='true')
+          span  Live Site
+        a(href=repo.repoUrl rel='noopener noreferrer' target='_blank' title=repo.name)
+          i(class='fa fa-github' aria-hidden='true')
+          span  See the Code
 
 section.onecolumn#projects
   h1 PROJECTS
