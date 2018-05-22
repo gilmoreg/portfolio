@@ -1,3 +1,0 @@
-# Condictor
-
-Stuff about condictor

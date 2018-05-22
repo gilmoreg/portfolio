@@ -1,0 +1,103 @@
+- 
+  const repos = [{
+    "name": "condictor",
+    "description": "A lightweight helpdesk issue tracker.",
+    "topics": [
+      "docker",
+      "enzyme",
+      "express",
+      "graphql",
+      "heroku",
+      "jest",
+      "lokka",
+      "mongodb",
+      "nodejs",
+      "passport",
+      "react",
+      "redux",
+      "travis-ci"
+    ],
+    "repoUrl": "https://github.com/gilmoreg/condictor",
+    "siteUrl": "http://condictor.gilmoreg.com/"
+  },
+  {
+    "name": "legocollector",
+    "description": "Full Stack Python/Flask + React Tools for Lego Collectors",
+    "topics": [
+      "aws-lambda",
+      "docker",
+      "flask",
+      "lego",
+      "postgresql",
+      "react",
+      "redux",
+      "sqlalchemy",
+      "styled-components"
+    ],
+    "repoUrl": "https://github.com/gilmoreg/legocollector",
+    "siteUrl": "https://gilmoreg.github.io/legocollector/"
+  },
+  {
+    "name": "steam-battle",
+    "description": "Compare two Steam profiles and declare a winner!",
+    "topics": [
+      "axios",
+      "chai",
+      "google-cloud-functions",
+      "mocha",
+      "react",
+      "redux",
+      "redux-thunk",
+      "steam-api"
+    ],
+    "repoUrl": "https://github.com/gilmoreg/steam-battle",
+    "siteUrl": "http://steam-battle.gilmoreg.com/"
+  },
+  {
+    "name": "referendus_angular",
+    "description": "An Angular 4 lightweight reference/bibliography manager",
+    "topics": [
+      "angular",
+      "docker",
+      "express",
+      "heroku",
+      "jest",
+      "mongodb",
+      "nodejs",
+      "passport",
+      "travis-ci"
+    ],
+    "repoUrl": "https://github.com/gilmoreg/referendus_angular",
+    "siteUrl": "https://referendus-angular.herokuapp.com"
+  }]
+
+mixin project(repo)
+  section.project(id=name)
+    h2.title #{repo.name.toUpperCase()}
+    .description= repo.description
+    ul.topics
+      each topic in repo.topics
+        li= topic.toUpperCase()
+    section(id=`${repo.name}-copy`)
+      case repo.name
+        when "condictor"
+          include:markdown-it ../markdown/projects/condictor.md
+        when "referendus"
+          include:markdown-it ../markdown/projects/referendus.md
+        when "legocollector"
+          include:markdown-it ../markdown/projects/legocollector.md
+        when "steam-battle"
+          include:markdown-it ../markdown/projects/steam-battle.md
+    section.button-row
+      a(href=repo.siteUrl rel='noopener noreferrer' target='_blank' title=repo.name)
+        i(class='fa fa-external-link' aria-hidden='true')
+        span Live Site
+      a(href=repo.repoUrl rel='noopener noreferrer' target='_blank' title=repo.name)
+        i(class='fa fa-github' aria-hidden='true')
+        span See the Code
+
+section.onecolumn#projects
+  h1 PROJECTS
+  section.portfolio
+    each repo in repos
+      +project(repo)
